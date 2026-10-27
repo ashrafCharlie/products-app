@@ -27,28 +27,27 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               children: [
             
                 SizedBox(
-                  height: 200,
                   width: double.infinity,
-                  child: Image.network(widget.product.thumbnail),
+                  child: Image.network(widget.product.thumbnail,fit: BoxFit.contain,),
                 ),
             
                 SizedBox(height: 16.0,),
             
                 Text(widget.product.title,style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 25,
                 ),),
             
                 SizedBox(height: 8.0,),
             
                 Text(widget.product.description,style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 16.0,
                 ),),
             
                 SizedBox(height: 8.0,),
             
                 Text("\$${widget.product.price}",style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 28.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.amber
                 ),),
@@ -67,7 +66,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         //demo 
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Demo:purchase successful")));
                         Navigator.pop(context);
-                      }, child: Text("Buy now",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)),
+                      }, child: Text("Buy now",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20),)),
                   ),
             
                 )

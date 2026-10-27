@@ -21,6 +21,9 @@ class ProductsApp extends StatelessWidget {
       child: BlocProvider(
          create: (context) => ProductBloc(productRepository:  context.read<ProductRepository>() ),
         child: MaterialApp(
+           scrollBehavior: MaterialScrollBehavior().copyWith(
+            overscroll: false,
+           ),
           debugShowCheckedModeBanner: false,
           theme: ThemeData.dark(),
           home: HomeScreen(),

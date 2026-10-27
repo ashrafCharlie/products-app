@@ -69,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
+                      childAspectRatio: 0.75
                       ),
              
                     itemCount: products.length,
@@ -85,15 +86,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
-                                child: SizedBox(
-                                  width: double.infinity,
+                                child: Center(
                                   child: Image.network(
                                     product.thumbnail,
-                                    fit: BoxFit.contain,
                                   ),
                                 ),
                               ),
-                        
+
                               const SizedBox(height: 8),
                         
                               Text(
@@ -126,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Product added to cart")));
 
                                   },
-                                  child: const Text('Demo: Add to Cart',style: TextStyle(
+                                  child: const Text('Add to Cart',style: TextStyle(
                                     color: Colors.black,
                                   ),),
                                 ),
